@@ -25,51 +25,51 @@ export default class PostCustomer extends Component {
 
     render() {
         return (
-            <div>
-                <h1>POST Customer</h1>
-                <label>Enter the Name: </label>
+            <div className="backg">
+                <h3>POST Customer</h3>
+                <label className="side">Enter the Name: </label>
                 <input type="text"
                     name="name"
                     values={this.state.customer.name}
                     onChange={this.changeHandler} />
                 <span style={{ color: 'red', display:'block' }}>{this.state.errors['name']}</span>
                 <br />
-                <label>Enter the Gender: </label>
+                <label className="side">Enter the Gender: </label>
                 <input type="text"
                     name="gender"
                     values={this.state.customer.gender}
                     onChange={this.changeHandler} />
                 <span style={{ color: 'red', display:'block' }}>{this.state.errors['gender']}</span>
                 <br />
-                <label>Enter the Address: </label>
+                <label className="side">Enter the Address: </label>
                 <input type="text"
                     name="address"
                     values={this.state.customer.address}
                     onChange={this.changeHandler} />
                 <span style={{ color: 'red', display:'block' }}>{this.state.errors['address']}</span>
                 <br />
-                <label>Enter the Number: </label>
+                <label className="side">Enter the Number: </label>
                 <input type="text"
                     name="number"
                     values={this.state.customer.number}
                     onChange={this.changeHandler} />
                 <span style={{ color: 'red', display:'block' }}>{this.state.errors['number']}</span>
                 <br />
-                <label>Enter the EmailId: </label>
+                <label className="side">Enter the EmailId: </label>
                 <input type="text"
                     name="emailId"
                     values={this.state.customer.emailId}
                     onChange={this.changeHandler} />
                 <span style={{ color: 'red', display:'block' }}>{this.state.errors['emailId']}</span>
                 <br />
-                <label>Enter the UserName: </label>
+                <label className="side">Enter the UserName: </label>
                 <input type="text"
                     name="username"
-                    values={this.state.customer.user.username}
+                    values={this.state.customer.username}
                     onChange={this.changeHandler} />
                 <span style={{ color: 'red' , display:'block'}}>{this.state.errors['username']}</span>
                 <br />
-                <label>Enter the Password: </label>
+                <label className="side">Enter the Password: </label>
                 <input type="password"
                     name="password"
                     values={this.state.customer.password}
@@ -77,7 +77,7 @@ export default class PostCustomer extends Component {
                 <span style={{ color: 'red' , display:'block' }}>{this.state.errors['password']}</span>
                 <br />
 
-                <button onClick={this.onSignUp}>Submit</button>
+                <button className="btn btn-info"  onClick={this.onSignUp}>Submit</button>
             </div>
         );
     }
@@ -135,7 +135,7 @@ export default class PostCustomer extends Component {
             formValid = false;
             tempErrors['emailId'] = 'Email cannot be empty';
         }
-        if (!username) { //If email is not given
+        if (!username) { //If username is not given
             formValid = false;
             tempErrors['username'] = 'Username cannot be empty';
         }

@@ -1,7 +1,8 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 import { listCustomer } from "../store/action/customer";
-import PostCustomer from "./postcustomers";
+import PostCustomer from "./customer-components/postcustomers";
+import GetCustomerInfo from "./GetCustomerInfo";
 
 
 export class Customer extends Component {
@@ -9,8 +10,7 @@ export class Customer extends Component {
         super(props);
 
         this.state = {
-            showCustomerAdd: false,
-            componentNum:0
+            componentNum: 0
         };
     }
 
@@ -34,36 +34,35 @@ export class Customer extends Component {
                             }} > Add Customer</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" to="#">Link</a>
+                            <button type="button" className="btn btn-primary" onClick={() => {
+                                this.setState({ componentNum: 2 })
+                            }} > Get Details</button>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled">Disabled</a>
-                        </li>
+                        {/* <li className="nav-item">
+                            <button type="button" className="btn btn-primary" onClick={() => {
+                                this.setState({ componentNum: 2 })
+                            }} > Show Details</button>
+                        </li> */}
                     </ul>
                 </div>
                 <div >
-                    {this.state.componentNum === 0 ? this.showCustomerList():<PostCustomer/>
-                    // {this.state.componentNum ===0 ?
-                    //     <PostCustomer />:this.state.componentNum ===2 ?
-                    //     this.showCustomerList() :this.showCustomerList()
-                        // <div className="row row-cols-1 row-cols-md-4 g-4 ">
-                        //     {this.props.customerList.list.map((c) => (
-                        //         <div className="col" key={c.id}>
-                        //             <div className="card text-bg-secondary border-dark ">
-                        //                 <div className="card-header">ID:{c.id}</div>
-                        //                 <div className="card-body">
-                        //                     <h5 className="card-title">Name: {c.name}</h5>
-                        //                     <h5 className="card-title">Gender: {c.gender}</h5>
-                        //                     <h5 className="card-title">Address: {c.address}</h5>
-                        //                     <h5 className="card-title">Number: {c.number}</h5>
-                        //                     <h5 className="card-title">EmailId: {c.emailId}</h5>
-                        //                 </div>
-                        //                 {/* <div class="card-footer border-info">Gender:{c.gender}</div> */}
-                        //             </div>
-                        //         </div>
-                        //     ))}
-                        // </div>
-                        
+                {
+                        (() => {
+                            if (this.state.componentNum === 0) {
+                                return (
+                                    this.showCustomerList()
+                                )
+                            } else if (this.state.componentNum === 1) {
+                                return (
+                                    <PostCustomer/>
+                                )
+                            } 
+                            else {
+                                return (
+                                    <GetCustomerInfo/>
+                                )
+                            }
+                        })()
                     }
                 </div>
 
@@ -71,30 +70,30 @@ export class Customer extends Component {
         );
     }
 
-showCustomerList() {
-    return (
-        <div>
-            <div className="row row-cols-1 row-cols-md-3 g-4 ">
-                {this.props.customerList.list.map((c) => (
-                    <div className="col" key={c.id}>
-                        <div className="card text-bg-secondary">
-                            <div className="card-header">ID:{c.id}</div>
-                            <div className="card-body">
-                                <h5 className="card-title">Name: {c.name}</h5>
-                                <h5 className="card-title">Gender: {c.gender}</h5>
-                                <h5 className="card-title">Address: {c.address}</h5>
-                                <h5 className="card-title">Number: {c.number}</h5>
-                                <h5 className="card-title">EmailId: {c.emailId}</h5>
+    showCustomerList() {
+        return (
+            <div>
+                <div className="row row-cols-1 row-cols-md-3 g-4 ">
+                    {this.props.customerList.list.map((c) => (
+                        <div className="col" key={c.id}>
+                            <div className="card text-bg-secondary">
+                                <div className="card-header">ID:{c.id}</div>
+                                <div className="card-body">
+                                    <h5 className="card-title">Name: {c.name}</h5>
+                                    <h5 className="card-title">Gender: {c.gender}</h5>
+                                    <h5 className="card-title">Address: {c.address}</h5>
+                                    <h5 className="card-title">Number: {c.number}</h5>
+                                    <h5 className="card-title">EmailId: {c.emailId}</h5>
+                                </div>
+                                {/* <div class="card-footer border-info">Gender:{c.gender}</div> */}
                             </div>
-                            {/* <div class="card-footer border-info">Gender:{c.gender}</div> */}
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
 
-    )
-};
+        )
+    };
 };
 
 

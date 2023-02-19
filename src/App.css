@@ -39,3 +39,14 @@
 .er{
   display: block;
 }
+/* .details{
+  background-color:darkgrey;
+} */
+/* div{
+  margin-bottom: 10px;
+} */
+.side {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}

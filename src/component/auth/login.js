@@ -27,7 +27,7 @@ export class Login extends Component {
     render() {
 
         return (
-            this.state.isLoggedIn ? <Customer/> :
+            this.state.isLoggedIn ? <div><Customer/></div> :
                 <div>
                     <div className="row">
                         <div className="col-sm-3"></div>

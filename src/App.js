@@ -3,16 +3,18 @@ import NavBar from './component/navbar';
 // import { Routes } from 'react-router';
 import { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PostCustomer from './component/postcustomers';
 import { Outlet, Route, Routes } from "react-router-dom";
 // import GetCustomers from './component/getcustomers';
 import Customer from './component/Customer';
 import { Provider } from "react-redux";
 import {store} from "./store";
 import { Login } from './component/auth/login';
-import GetAccount from './component/Account';
 import PostAccount, { AddAccount } from './component/PostAccount';
 import AccountDeposit from './component/AccountDeposit';
+import PostCustomer from './component/customer-components/postcustomers';
+import { Account } from './component/Account';
+import { CustomerList } from './component/customer-components/customerlist';
+import GetCustomerInfo from './component/GetCustomerInfo';
 
 
 export default class App extends Component{
@@ -26,14 +28,14 @@ export default class App extends Component{
           <Provider store={store}>
           <NavBar />
           <Routes>
-            {/* <Route path="/" element={ <Customer />} />  */}
-            {/* <Route path="/" element={ <P />} />  */}
+            <Route path="/" element={ <Login />} /> 
             <Route path="/customer" element={ <Customer />} /> 
-            {/* <Route path="/sign-up" element={ <SignUp />} />  */}
-            <Route path="/sign-up" element={ <PostCustomer />} /> 
-            <Route path="/account/:id" element={ < PostAccount />} /> 
-            <Route path="/account" element={ < AccountDeposit />} /> 
-            <Route path="/sign-in" element={ <Login />} /> 
+            <Route path="/account" element={ <Account />} /> 
+            {/* <Route path="/customer/list" element={ <CustomerList/>} />  */}
+            {/* <Route path="/account/:id" element={ < PostAccount />} />  */}
+            <Route path="/account/:accountID" element={ < GetCustomerInfo />} /> 
+            <Route path="/account/:accountID/:amount" element={ < AccountDeposit />} /> 
+            {/* <Route path="/sign-in" element={ <Login />} />  */}
             {/* <Route path="*" element={ <PageNotFound />} /> */}
           </Routes>
           </Provider>
