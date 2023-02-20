@@ -12,8 +12,8 @@ export class AddAccount extends Component {
         this.state = {
 
             account: {
-                balance: 0.0,
-                acctStatus: '',
+                balance: 0,
+                acctStatus: 'ACTIVE',
                 customerID: ''
             },
             errors: {},
@@ -36,17 +36,17 @@ export class AddAccount extends Component {
                         <p className="card-text">
                             <span>{this.state.msg}</span> <br />
                             <label className="side">Account Balance: </label>
-                            <input type="text"
+                            <input type="number"
                                 name="balance"
                                 value={this.state.account.balance}
-                                onChange={this.changeHandler} />
+                                onChange={this.changeHandler} disabled />
                             <span style={{ color: 'red' }}>{this.state.errors['balance']}</span>
                             <br /><br />
                             <label className="side">Account Status: </label>
                             <input type="text"
                                 name="acctStatus"
                                 value={this.state.account.acctStatus}
-                                onChange={this.changeHandler} />
+                                onChange={this.changeHandler} disabled/>
                             <span style={{ color: 'red' }}>{this.state.errors['acctStatus']}</span>
                             <br /><br />
                             <label className="side">CustomerID: </label>
@@ -95,11 +95,11 @@ export class AddAccount extends Component {
         let tempErrors = {}
         let formValid = true;
 
-        if (!balance) { //If name is not given
+        if (balance !== 0) { //If name is not given
             formValid = false;
             tempErrors['balance'] = 'Balance cannot be empty';
         }
-        if (!acctStatus) { //If name is not given
+        if (acctStatus !== 'ACTIVE') { //If name is not given
             formValid = false;
             tempErrors['acctStatus'] = 'acctStatus cannot be empty';
         }
@@ -132,7 +132,7 @@ export class AddAccount extends Component {
             this.props.addAccount(data);
         } catch (error) {
             this.setState({
-                msg: "Account Not Registered"
+                msg: "Account Registered"
             })
         }
     }

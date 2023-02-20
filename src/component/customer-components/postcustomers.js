@@ -26,58 +26,62 @@ export default class PostCustomer extends Component {
     render() {
         return (
             <div className="backg">
-                <h3>POST Customer</h3>
+                <h3>ADD Customer</h3>
                 <label className="side">Enter the Name: </label>
                 <input type="text"
                     name="name"
                     values={this.state.customer.name}
                     onChange={this.changeHandler} />
-                <span style={{ color: 'red', display:'block' }}>{this.state.errors['name']}</span>
+                <span style={{ color: 'red', display: 'block' }}>{this.state.errors['name']}</span>
                 <br />
-                <label className="side">Enter the Gender: </label>
-                <input type="text"
-                    name="gender"
-                    values={this.state.customer.gender}
-                    onChange={this.changeHandler} />
-                <span style={{ color: 'red', display:'block' }}>{this.state.errors['gender']}</span>
+
+                <label className="side">Select Gender: </label>
+                <select name="gender"
+                    value={this.state.customer.gender}
+                    onChange={this.changeHandler} >
+                    <option key={0} value="">--Select Gender--</option>
+                    <option key={1} value="MALE">MALE</option>
+                    <option key={2} value="FEMALE">FEMALE</option>
+                </select>
+                <span style={{ color: 'red', display: 'block' }}>{this.state.errors['gender']}</span>
                 <br />
                 <label className="side">Enter the Address: </label>
                 <input type="text"
                     name="address"
                     values={this.state.customer.address}
                     onChange={this.changeHandler} />
-                <span style={{ color: 'red', display:'block' }}>{this.state.errors['address']}</span>
+                <span style={{ color: 'red', display: 'block' }}>{this.state.errors['address']}</span>
                 <br />
                 <label className="side">Enter the Number: </label>
                 <input type="text"
                     name="number"
                     values={this.state.customer.number}
                     onChange={this.changeHandler} />
-                <span style={{ color: 'red', display:'block' }}>{this.state.errors['number']}</span>
+                <span style={{ color: 'red', display: 'block' }}>{this.state.errors['number']}</span>
                 <br />
                 <label className="side">Enter the EmailId: </label>
                 <input type="text"
                     name="emailId"
                     values={this.state.customer.emailId}
                     onChange={this.changeHandler} />
-                <span style={{ color: 'red', display:'block' }}>{this.state.errors['emailId']}</span>
+                <span style={{ color: 'red', display: 'block' }}>{this.state.errors['emailId']}</span>
                 <br />
                 <label className="side">Enter the UserName: </label>
                 <input type="text"
                     name="username"
                     values={this.state.customer.username}
                     onChange={this.changeHandler} />
-                <span style={{ color: 'red' , display:'block'}}>{this.state.errors['username']}</span>
+                <span style={{ color: 'red', display: 'block' }}>{this.state.errors['username']}</span>
                 <br />
                 <label className="side">Enter the Password: </label>
                 <input type="password"
                     name="password"
                     values={this.state.customer.password}
                     onChange={this.changeHandler} />
-                <span style={{ color: 'red' , display:'block' }}>{this.state.errors['password']}</span>
+                <span style={{ color: 'red', display: 'block' }}>{this.state.errors['password']}</span>
                 <br />
 
-                <button className="btn btn-info"  onClick={this.onSignUp}>Submit</button>
+                <button className="btn btn-outline-info" onClick={this.onSignUp}>Submit</button>
             </div>
         );
     }
@@ -163,17 +167,5 @@ export default class PostCustomer extends Component {
             })
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

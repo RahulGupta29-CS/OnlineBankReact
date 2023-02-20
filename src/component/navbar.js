@@ -45,32 +45,42 @@ export default class NavBar extends Component {
                     Account
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/loan">
+                    Loan
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/fund">
+                    Fund
+                  </Link>
+                </li>
                 {/* <li className="nav-item">
                   <Link className="nav-link" to="/account/:id">
                     Post-Account 
                   </Link>
                 </li> */}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link" to="/account/:accountID">
                     Get Info 
                   </Link>
-                </li>
-                <li className="nav-item">
+                </li> */}
+                {/* <li className="nav-item">
                   <Link className="nav-link" to="/account/:accountID/:amount">
                     Account
                   </Link>
-                </li>
+                </li> */}
                 
-                {/* <li className="nav-item">
+                <li className="nav-item">
                   <Link className="nav-link" to="/sign-in">
                     Sign In
                   </Link>
-                </li> */}
-                {/* <li className="nav-item">
-                  <Link className="nav-link" to="/customer/list">
-                    List
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/sign-up">
+                    Sign-Up
                   </Link>
-                </li> */}
+                </li>
                 
               </ul>
             </div>

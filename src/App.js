@@ -15,6 +15,8 @@ import PostCustomer from './component/customer-components/postcustomers';
 import { Account } from './component/Account';
 import { CustomerList } from './component/customer-components/customerlist';
 import GetCustomerInfo from './component/GetCustomerInfo';
+import { Loan } from './component/Loan';
+import { Fund } from './component/Fund';
 
 
 export default class App extends Component{
@@ -31,11 +33,15 @@ export default class App extends Component{
             <Route path="/" element={ <Login />} /> 
             <Route path="/customer" element={ <Customer />} /> 
             <Route path="/account" element={ <Account />} /> 
+            <Route path="/loan" element={ <Loan />} /> 
+            <Route path="/fund" element={ <Fund />} /> 
+
             {/* <Route path="/customer/list" element={ <CustomerList/>} />  */}
             {/* <Route path="/account/:id" element={ < PostAccount />} />  */}
-            <Route path="/account/:accountID" element={ < GetCustomerInfo />} /> 
-            <Route path="/account/:accountID/:amount" element={ < AccountDeposit />} /> 
-            {/* <Route path="/sign-in" element={ <Login />} />  */}
+            {/* <Route path="/account/:accountID" element={ < GetCustomerInfo />} />  */}
+            {/* <Route path="/account/:accountID/:amount" element={ < AccountDeposit />} />  */}
+            <Route path="/sign-in" element={ <Login />} /> 
+            <Route path="/sign-up" element={ <PostCustomer />} /> 
             {/* <Route path="*" element={ <PageNotFound />} /> */}
           </Routes>
           </Provider>

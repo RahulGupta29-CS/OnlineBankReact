@@ -45,8 +45,7 @@ export class Account extends Component {
                     </ul>
                 </div>
                 <div >
-                    {/* {this.state.componentNum === 0 ? <AddAccount /> : <AccountDeposit/> */
-                    }
+                    
                     {
                         (() => {
                             if (this.state.componentNum === 0) {

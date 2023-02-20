@@ -35,7 +35,7 @@ const AccountDeposit = ({ deposit }) => {
                 onChange={(event) => setAmount(event.target.value)} />
               <br /><br />
 
-              <button type='submit' className="btn btn-primary">Deposit Amount</button>
+              <button type='submit'  className="btn btn-primary">Deposit Amount</button>
             </p>
 
           </div>

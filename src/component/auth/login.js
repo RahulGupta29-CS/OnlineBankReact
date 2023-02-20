@@ -3,6 +3,7 @@ import { Component } from "react";
 import { connect } from "react-redux";
 
 import { login } from "../../store/action/login";
+import { Account } from "../Account";
 import { Customer } from "../Customer";
 
 
@@ -17,7 +18,7 @@ export class Login extends Component {
             },
             errors: {},
             msg: '',
-            redirect: '/customer',
+            redirect: '/account',
             isLoggedIn: false
         };
     }
@@ -27,7 +28,7 @@ export class Login extends Component {
     render() {
 
         return (
-            this.state.isLoggedIn ? <div><Customer/></div> :
+            this.state.isLoggedIn ? <div>< Account/></div> :
                 <div>
                     <div className="row">
                         <div className="col-sm-3"></div>

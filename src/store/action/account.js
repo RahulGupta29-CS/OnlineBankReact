@@ -19,6 +19,7 @@ export const depositAmount = (accountID, amount) => {
         dispatch({
           type: 'DEPOSIT_SUCCESS',
           payload: response.data,
+          
         });
       } catch (error) {
         dispatch({
